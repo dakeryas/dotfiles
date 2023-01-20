@@ -82,6 +82,7 @@ plugins=(
 
 # Must be added to fpath before sourcing oh-my-zsh.sh
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath+=$(brew --prefix)/share/zsh/site-functions
 
 source $ZSH/oh-my-zsh.sh
 
