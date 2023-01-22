@@ -114,4 +114,5 @@ VI_MODE_SET_CURSOR=true
 export KEYTIMEOUT=20
 bindkey -v
 bindkey -s -M viins 'jk' '^[l'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[[ $DISPLAY ]] &&  [ -f $HOME/.Xmodmap ] && xmodmap $HOME/.Xmodmap
