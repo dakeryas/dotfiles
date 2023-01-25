@@ -105,7 +105,7 @@ setopt MAGIC_EQUAL_SUBST # Path completion for --arg=/path/
 setopt HIST_FIND_NO_DUPS
 
 zstyle ':completion:*:*:vi*:*:*files' ignored-patterns '*.(pdf|o|so)'
-# autoload -U compinit && compinit
+# autoload -Uz compinit && compinit
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 VI_MODE_SET_CURSOR=true
@@ -113,6 +113,6 @@ VI_MODE_SET_CURSOR=true
 # Wait KEYTIMEOUT hundredths of seconds when reading character sequences
 export KEYTIMEOUT=20
 bindkey -v
-bindkey -s -M viins 'jk' '^[l'
+bindkey -M viins 'jk' vi-cmd-mode
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [[ $DISPLAY ]] &&  [ -f $HOME/.Xmodmap ] && xmodmap $HOME/.Xmodmap
