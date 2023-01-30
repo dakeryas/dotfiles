@@ -123,5 +123,6 @@ VI_MODE_SET_CURSOR=true
 export KEYTIMEOUT=20
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
+bindkey -M viins '©' fzf-cd-widget
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ $DISPLAY ]] &&  [ -f $HOME/.Xmodmap ] && xmodmap $HOME/.Xmodmap
