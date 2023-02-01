@@ -2,5 +2,4 @@ zmodload zsh/mathfunc
 autoload zmv
 
 export PATH=$HOME/Software/bin:$PATH
-export LANG=en_GB.UTF-8
-export LANGUAGE=en_GB.UTF-8
+[[ -z $LC_ALL ]] && export LC_ALL=en_GB.UTF-8
