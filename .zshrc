@@ -70,7 +70,14 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode command-not-found zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
+plugins=(
+    git
+    vi-mode
+    command-not-found
+    zsh-syntax-highlighting
+    zsh-completions
+    zsh-autosuggestions
+)
 
 # Must be added to fpath before sourcing oh-my-zsh.sh
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
