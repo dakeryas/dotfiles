@@ -77,6 +77,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-completions
     zsh-autosuggestions
+    pip
 )
 
 # Must be added to fpath before sourcing oh-my-zsh.sh
