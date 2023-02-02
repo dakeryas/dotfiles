@@ -1,0 +1,60 @@
+#!/usr/bin/env zsh
+
+# select previous window or if that fails the first window of the screen.
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
+
+# Focus zathura windows when they are created
+yabai -m signal --add app="^zathura$" event=window_created action="~/.config/yabai/focus_last_window_id.zsh zathura"
+
+# global settings
+yabai -m config top_padding 0
+
+# focus settings
+yabai -m config mouse_follows_focus          on
+yabai -m config focus_follows_mouse          off
+
+# spawning settings
+yabai -m config window_placement             second_child
+yabai -m config window_topmost               off
+yabai -m config window_origin_display        cursor
+
+# Mouse support
+yabai -m config mouse_modifier               alt
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config bottom_padding               0
+yabai -m config left_padding                 0
+yabai -m config right_padding                0
+yabai -m config window_gap                   0
+#
+# visual settings
+yabai -m config window_opacity               off
+yabai -m config window_opacity_duration      0.0
+yabai -m config window_shadow                on
+
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.90
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 off
+
+# create a couple workspaces up to $YABAI_MAX_SPACES
+YABAI_MAX_SPACES=5
+repeat $(yabai -m query --spaces | jq "$YABAI_MAX_SPACES - length" ) yabai -m space --create 
+
+# OSX creates one additional workspace per display, destroy spaces to reach $YABAI_MAX_SPACES
+
+function destroy_excess_spaces(){
+    local excess=$1
+    local display=$2
+    [ -z $display ] && display=0
+    spaces=($(yabai -m query --displays | jq ".[$display].spaces[-1-$excess:-1] | map(. + 1) | reverse | .[]"))
+    for s in $spaces; do
+        yabai -m space --destroy $s;
+    done
+}
+
+destroy_excess_spaces $(yabai -m query --spaces | jq "length - $YABAI_MAX_SPACES") 
