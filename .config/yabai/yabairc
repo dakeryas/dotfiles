@@ -41,7 +41,7 @@ yabai -m config normal_window_opacity        0.90
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 off
 
-# create a couple workspaces up to $YABAI_MAX_SPACES
+# create a couple of workspaces up to $YABAI_MAX_SPACES
 YABAI_MAX_SPACES=5
 repeat $(yabai -m query --spaces | jq "$YABAI_MAX_SPACES - length" ) yabai -m space --create 
 
