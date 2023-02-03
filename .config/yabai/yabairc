@@ -51,7 +51,7 @@ yabai -m config auto_balance                 off
 
 # create a couple of workspaces up to $YABAI_MAX_SPACES
 YABAI_MAX_SPACES=5
-repeat $(yabai -m query --spaces | jq "$YABAI_MAX_SPACES - length" ) yabai -m space --create 
+repeat $(yabai -m query --spaces | jq "$YABAI_MAX_SPACES - length" ) yabai -m space --create
 
 # OSX creates one additional workspace per display, destroy spaces to reach $YABAI_MAX_SPACES
 
@@ -65,4 +65,4 @@ function destroy_excess_spaces(){
     done
 }
 
-destroy_excess_spaces $(yabai -m query --spaces | jq "length - $YABAI_MAX_SPACES") 
+destroy_excess_spaces $(yabai -m query --spaces | jq "length - $YABAI_MAX_SPACES")
