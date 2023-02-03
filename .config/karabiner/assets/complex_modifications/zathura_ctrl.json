@@ -1,0 +1,27 @@
+{
+  "title": "Right CMD to CTRL in zathura",
+  "rules": [
+    {
+      "description": "swap left control/command keys for zathura",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command"
+          },
+          "to": {
+            "key_code": "right_control"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "file_paths": [
+                ".*/bin/zathura$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
