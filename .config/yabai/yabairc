@@ -17,7 +17,7 @@ yabai -m signal --add event=window_destroyed action="yabai -m query --windows --
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
 
 # Focus zathura windows when they are created
-yabai -m signal --add app="^zathura$" event=window_created action="~/.config/yabai/focus_last_window_id.zsh zathura"
+yabai -m signal --add app="^zathura$" event=window_created action="yabai -m window --focus last"
 
 # Global settings
 yabai -m config top_padding 0
