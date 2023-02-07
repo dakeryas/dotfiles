@@ -47,20 +47,9 @@ yabai -m config auto_balance                 off
 
 # Create a couple of workspaces up to $YABAI_MAX_SPACES
 YABAI_MAX_SPACES=5
-repeat $(yabai -m query --spaces | jq "$YABAI_MAX_SPACES - length" ) yabai -m space --create
-
-# OSX creates one additional workspace per display, destroy spaces to reach $YABAI_MAX_SPACES
-function destroy_excess_spaces(){
-    local excess=$1
-    local display=$2
-    [ -z $display ] && display=0
-    spaces=($(yabai -m query --displays | jq ".[$display].spaces[-1-$excess:-1] | map(. + 1) | reverse | .[]"))
-    for s in $spaces; do
-        yabai -m space --destroy $s;
-    done
-}
-
-destroy_excess_spaces $(yabai -m query --spaces | jq "length - $YABAI_MAX_SPACES")
+for sp in {1..$YABAI_MAX_SPACES}; do
+    yabai -m query --spaces --space $sp &> /dev/null || yabai -m space --create
+done
 
 # Tie applications to spaces
 yabai -m rule --add app="^iTerm2$" space=^1
