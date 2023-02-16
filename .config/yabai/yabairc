@@ -60,5 +60,5 @@ yabai -m rule --add app="^Safari$" space=^3
 yabai -m rule --add app="^Mattermost$" space=^5
 
 # Enforce the number of spaces regardless of the number of displays
-yabai -m signal --add event=display_added action="yabai -m space --destroy \$(yabai -m query --spaces --display 1 | jq '.[-1].index')"
+yabai -m signal --add event=display_added action="~/.config/yabai/destroy_excess_spaces.zsh $YABAI_MAX_SPACES"
 yabai -m signal --add event=display_removed action="yabai -m space --create"
