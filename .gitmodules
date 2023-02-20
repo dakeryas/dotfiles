@@ -10,3 +10,6 @@
 [submodule ".oh-my-zsh/custom/plugins/yabai-zsh-completions"]
 	path = .oh-my-zsh/custom/plugins/yabai-zsh-completions
 	url = https://github.com/Amar1729/yabai-zsh-completions
+[submodule "/Users/vsibille/.oh-my-zsh/custom/plugins/yabai-zsh-completions"]
+	path = /Users/vsibille/.oh-my-zsh/custom/plugins/yabai-zsh-completions
+	url = https://github.com/Amar1729/yabai-zsh-completions
