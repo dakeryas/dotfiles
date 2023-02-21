@@ -16,7 +16,7 @@ function switch_osx_appearance() {
     local dark_mode="Dark Background"
     local light_mode="BlulocoLight"
     osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
-    theme=$(defaults read -g AppleInterfaceStyle) &>/dev/null
+    theme=$(defaults read -g AppleInterfaceStyle) 2>/dev/null
     [[ $theme == "Dark" ]] && echo -e "\033]1337;SetColors=preset=$dark_mode\a" \
         || echo -e "\033]1337;SetColors=preset=$light_mode\a"
 }
