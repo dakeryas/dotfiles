@@ -57,6 +57,7 @@ yabai -m rule --add app="^Telegram$" space=^2
 yabai -m rule --add app="^DeaDBeeF$" space=^2
 yabai -m rule --add app="^FireFox$" space=^3
 yabai -m rule --add app="^Safari$" space=^3
+yabai -m rule --add app="^WhatsApp$" space=^5
 yabai -m rule --add app="^Mattermost$" space=^5
 
 # Enforce the number of spaces regardless of the number of displays
