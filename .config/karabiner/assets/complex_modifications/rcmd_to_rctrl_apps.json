@@ -1,8 +1,8 @@
 {
-  "title": "Right CMD to CTRL in zathura",
+  "title": "Right CMD to CTRL in specific apps",
   "rules": [
     {
-      "description": "swap left control/command keys for zathura",
+      "description": "Change RightCMD to RightCTRL for some apps",
       "manipulators": [
         {
           "type": "basic",
@@ -15,6 +15,7 @@
           "conditions": [
             {
               "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.apple\\.Terminal$"],
               "file_paths": [
                 ".*/bin/zathura$"
               ]
