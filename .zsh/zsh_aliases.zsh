@@ -4,6 +4,9 @@ if command -v gls >/dev/null 2>&1; then
 else
     alias ll='ls -lh'
 fi
+if command -v ccat >/dev/null 2>&1; then
+    alias cat='ccat --bg=dark'
+fi
 alias lt='ll -t'
 alias la='ll -a'
 alias ..='cd ../'
