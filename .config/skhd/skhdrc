@@ -12,12 +12,6 @@ lalt + shift - j : yabai -m window --swap south || $(yabai -m window --display s
 lalt + shift - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
 lalt + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
 
-# set insertion point in focused container
-lalt + ctrl - h : yabai -m window --insert west
-lalt + ctrl - j : yabai -m window --insert south
-lalt + ctrl - k : yabai -m window --insert north
-lalt + ctrl - l : yabai -m window --insert east
-
 # go back to previous workspace (kind of like back_and_forth in i3)
 lalt - b : yabai -m space --focus recent
 
