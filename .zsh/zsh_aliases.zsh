@@ -10,7 +10,6 @@ alias ..='cd ../'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias par='parallel -k --verbose'
-[[ -f /Applications/DeaDBeeF.app/Contents/MacOS/DeaDBeeF ]] && alias deadbeef='/Applications/DeaDBeeF.app/Contents/MacOS/DeaDBeeF'
 
 function switch_osx_appearance() {
     local dark_mode="Dark Background"
