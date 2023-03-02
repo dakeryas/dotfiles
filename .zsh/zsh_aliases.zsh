@@ -14,11 +14,22 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias par='parallel -k --verbose'
 
-function switch_osx_appearance() {
+function set_iTerm2_mode(){
+    local mode=$1
+    echo -e "\033]1337;SetColors=preset=${mode}\a"
+}
+
+function is_osx_dark(){
+    theme=$(defaults read -g AppleInterfaceStyle) 2>/dev/null
+    [[ $theme == "Dark" ]]
+    return
+}
+
+function switch_osx_appearance(){
     local dark_mode="Dark Background"
     local light_mode="BlulocoLight"
     osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
-    theme=$(defaults read -g AppleInterfaceStyle) 2>/dev/null
-    [[ $theme == "Dark" ]] && echo -e "\033]1337;SetColors=preset=$dark_mode\a" \
-        || echo -e "\033]1337;SetColors=preset=$light_mode\a"
+    is_osx_dark && set_iTerm2_mode $dark_mode || set_iTerm2_mode $light_mode
 }
+
+unset is_osx_dark
