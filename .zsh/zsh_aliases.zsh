@@ -18,6 +18,8 @@ alias xop='open'
 function set_iTerm2_mode(){
     local mode=$1
     echo -e "\033]1337;SetColors=preset=${mode}\a"
+    local update_profiles=$HOME/Library/ApplicationSupport/iTerm2/Scripts/AutoLaunch/theme.py
+    [[ -f $update_profiles ]] && $update_profiles &
 }
 
 function is_osx_dark(){
