@@ -1,5 +1,5 @@
 from IPython.core.ultratb import VerboseTB
-VerboseTB._tb_highlight = "bg:#039dfc"
+VerboseTB._tb_highlight = "bg:#cd1076"
 
 c.TerminalInteractiveShell.editing_mode = 'vi'
 c.TerminalInteractiveShell.editor = u'vim'
