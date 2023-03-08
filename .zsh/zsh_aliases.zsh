@@ -13,6 +13,7 @@ alias ..='cd ../'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias par='parallel -k --verbose'
+alias xop='open'
 
 function set_iTerm2_mode(){
     local mode=$1
