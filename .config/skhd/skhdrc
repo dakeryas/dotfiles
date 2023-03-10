@@ -3,8 +3,8 @@ lalt - h : yabai -m window --focus west
 lalt - j : yabai -m window --focus south
 lalt - k : yabai -m window --focus north
 lalt - l : yabai -m window --focus east
-lalt - p : yabai -m window --focus stack.prev
-lalt - n : yabai -m window --focus stack.next
+lalt - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+lalt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 # shift window in current workspace
 lalt + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
