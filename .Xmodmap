@@ -1,8 +1,0 @@
-keycode 18 = ccedilla 9 9 parenleft asciicircum Ccedilla
-keycode 31 = i I Cyrillic_sha Cyrillic_SHA rightarrow idotless
-keycode 43 = h H Cyrillic_er Cyrillic_ER Left hstroke
-keycode 44 = j J Cyrillic_o Cyrillic_O Down Up
-keycode 45 = k K Cyrillic_el Cyrillic_EL Up kra
-keycode 46 = l L Cyrillic_de Cyrillic_DE Right lstroke
-keycode 53 = x X Cyrillic_che Cyrillic_CHE guillemotright greater U203A U2283
-keycode 57 = n N Cyrillic_te Cyrillic_TE ntilde Ntilde
