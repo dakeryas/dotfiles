@@ -4,5 +4,3 @@
 	cm = commit
 	unstage = reset HEAD --
 	diffwords = diff --color-words
-[user]
-	email = valerian.sibille@meetiqm.com
