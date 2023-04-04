@@ -4,3 +4,5 @@
 	cm = commit
 	unstage = reset HEAD --
 	diffwords = diff --color-words
+[core]
+	pager = vim -R -
