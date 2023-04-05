@@ -6,3 +6,5 @@
 	diffwords = diff --color-words
 [core]
 	pager = vim -R -
+[init]
+	defaultBranch = master
