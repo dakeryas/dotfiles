@@ -4,7 +4,7 @@
 	cm = commit
 	unstage = reset HEAD --
 	diffwords = diff --color-words
-[core]
-	pager = vim -R -
 [init]
 	defaultBranch = master
+[pager]
+	show = vim -R -
