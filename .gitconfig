@@ -4,7 +4,10 @@
 	cm = commit
 	unstage = reset HEAD --
 	diffwords = diff --color-words
+	logfull = log --oneline --graph --all --decorate
+	diffvim = difftool --tool=vimdiff --no-prompt
 [init]
 	defaultBranch = master
 [pager]
 	show = vim -R -
+	color = true
