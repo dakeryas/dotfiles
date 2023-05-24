@@ -15,6 +15,13 @@ alias ....='cd ../../..'
 alias par='parallel -k --verbose'
 alias xop='open'
 
+function remove_spaces(){
+    local files=$@
+    for f in $files; do
+        mv $f ${f:gs/ /_}
+    done
+}
+
 function set_iTerm2_mode(){
     local mode=$1
     echo -e "\033]1337;SetColors=preset=${mode}\a"
