@@ -8,7 +8,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 # Install
+Set-up the empty repository
 ```
-$ git clone --bare git@github.com:dakeryas/dotfiles.git ~/.dotfiles 
-$ git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout master
+git clone --bare git@github.com:dakeryas/dotfiles.git ~/.dotfiles
+```
+Checkout the config files
+```
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout master
 ```
