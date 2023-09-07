@@ -11,3 +11,6 @@
 [pager]
 	show = vim -R -
 	color = true
+[user]
+	email = valerian.sibille@planqc.eu
+	name = Valérian Sibille
