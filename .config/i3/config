@@ -75,16 +75,16 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h focus left; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
+bindsym $mod+j focus down; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
+bindsym $mod+k focus up; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
+bindsym $mod+l focus right; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
+bindsym $mod+Shift+j move down; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
+bindsym $mod+Shift+k move up; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
+bindsym $mod+Shift+l move right; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
 
 # split in horizontal orientation
 bindsym $mod+o split h
