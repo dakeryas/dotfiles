@@ -84,6 +84,7 @@ plugins=(
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
+eval "$(zoxide init zsh)"
 
 # User configuration
 
@@ -113,7 +114,6 @@ setopt MAGIC_EQUAL_SUBST # Path completion for --arg=/path/
 setopt HIST_FIND_NO_DUPS
 
 zstyle ':completion:*:*:vi*:*:*files' ignored-patterns '*.(pdf|o|so)'
-# autoload -Uz compinit && compinit
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 VI_MODE_SET_CURSOR=true
