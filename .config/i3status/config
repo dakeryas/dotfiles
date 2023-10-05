@@ -47,7 +47,7 @@ net_rate {
 
 backlight {
     format = '☼ {level}%'
-    cache_timeout = 5
+    cache_timeout = 30
 }
 
 battery all {
