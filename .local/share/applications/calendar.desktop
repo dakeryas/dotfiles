@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Zenity Calendar
+Exec=sh -c "/usr/bin/zenity --calendar"
+Icon=/usr/share/icons/Papirus/64x64/apps/org.gnome.calendar.svg
+Terminal=false
+Type=Application
