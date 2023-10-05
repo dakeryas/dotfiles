@@ -46,7 +46,7 @@ net_rate {
 }
 
 backlight {
-    format = '☼ {level}'
+    format = '☼ {level}%'
     cache_timeout = 5
 }
 
