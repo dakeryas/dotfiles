@@ -156,7 +156,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 mode "leave: [l]ock, [e]xit, [r]eboot, [s]hutdown" {
   bindsym l exec loginctl lock-session, mode "default"
-  bindsym o exec i3-msg exit
+  bindsym e exec i3-msg exit
   bindsym r exec systemctl reboot
   bindsym s exec systemctl poweroff
   bindsym Escape mode "default"

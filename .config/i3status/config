@@ -16,6 +16,7 @@ order += "memory"
 order += "disk /"
 order += "disk /home"
 order += "volume master"
+order += "backlight"
 order += "keyboard_layout"
 order += "battery all"
 order += "net_rate"
@@ -42,6 +43,11 @@ net_rate {
     cache_timeout = 2
     format_value = '[\?min_length=8 {value:.1f} {unit}]'
     unit = 'MiB/s'
+}
+
+backlight {
+    format = '☼ {level}'
+    cache_timeout = 5
 }
 
 battery all {
