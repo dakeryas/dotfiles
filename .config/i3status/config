@@ -11,10 +11,9 @@ general {
         interval = 5
 }
 
+order += "lm_sensors"
 order += "load"
 order += "memory"
-order += "disk /"
-order += "disk /home"
 order += "volume master"
 order += "backlight"
 order += "keyboard_layout"
@@ -22,20 +21,28 @@ order += "battery all"
 order += "net_rate"
 order += "tztime local"
 
+lm_sensors {
+    sensors = ['cpu', 'edge']
+    format_chip = '{format_sensor}'
+    format_sensor = '[\?if=name=cpu CPU ]'
+    format_sensor += '[\?if=name=edge GPU ]'
+    format_sensor += '\?color=auto.input {input}°C'
+}
+
 volume master {
-        format = "♪ %volume"
-        format_muted = "♭ (%volume)"
-        device = "pulse"
+    format = "♪ %volume"
+    format_muted = "♭ (%volume)"
+    device = "pulse"
 }
 
 wireless _first_ {
-        format_up = "%ip (%quality %essid)"
-        format_down = "☡"
+    format_up = "%ip (%quality %essid)"
+    format_down = "☡"
 }
 
 ethernet _first_ {
-        format_up = "%ip (%speed)"
-        format_down = "☡"
+    format_up = "%ip (%speed)"
+    format_down = "☡"
 }
 
 net_rate {
