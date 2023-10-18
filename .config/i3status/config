@@ -86,7 +86,7 @@ memory {
 }
 
 tztime local {
-        format = "%Y-%b-%d %H:%M:%S"
+        format = "%a %d-%b-%Y %H:%M:%S"
 }
 
 keyboard_layout {
