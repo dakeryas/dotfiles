@@ -8,4 +8,5 @@ keycode 43 = h H Cyrillic_er Cyrillic_ER Left hstroke
 keycode 44 = j J Cyrillic_o Cyrillic_O Down Up
 keycode 45 = k K Cyrillic_el Cyrillic_EL Up kra
 keycode 46 = l L Cyrillic_de Cyrillic_DE Right lstroke
+keycode 54 = c C Cyrillic_es Cyrillic_ES Greek_sigma Greek_SIGMA
 keycode 57 = n N Cyrillic_te Cyrillic_TE ntilde Ntilde
