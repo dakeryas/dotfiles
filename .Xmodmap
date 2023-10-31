@@ -1,4 +1,9 @@
 keycode 18 = ccedilla 9 9 parenleft asciicircum Ccedilla
+keycode 28 = t T Cyrillic_ie Cyrillic_IE Greek_theta Greek_THETA
+keycode 33 = p P Cyrillic_ze Cyrillic_ZE Greek_pi Greek_PI
+keycode 40 = d D Cyrillic_ve Cyrillic_VE Greek_delta Greek_DELTA
+keycode 41 = f F Cyrillic_a Cyrillic_A Greek_phi Greek_PHI
+keycode 42 = g G Cyrillic_pe Cyrillic_PE Greek_gamma Greek_GAMMA
 keycode 43 = h H Cyrillic_er Cyrillic_ER Left hstroke
 keycode 44 = j J Cyrillic_o Cyrillic_O Down Up
 keycode 45 = k K Cyrillic_el Cyrillic_EL Up kra
