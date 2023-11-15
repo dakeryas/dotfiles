@@ -74,6 +74,10 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+# start common programs
+bindsym $mod+n exec firefox
+bindsym $mod+t exec telegram-desktop
+
 # change focus
 bindsym $mod+h focus left; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
 bindsym $mod+j focus down; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
