@@ -10,3 +10,7 @@ keycode 45 = k K Cyrillic_el Cyrillic_EL Up kra
 keycode 46 = l L Cyrillic_de Cyrillic_DE Right lstroke
 keycode 54 = c C Cyrillic_es Cyrillic_ES Greek_sigma Greek_SIGMA
 keycode 57 = n N Cyrillic_te Cyrillic_TE ntilde Ntilde
+keycode 118 = Print Sys_Req Print Sys_Req Print Sys_Req Print Sys_Req
+clear control
+keycode 107 = Control_R
+add control = Control_R Control_L

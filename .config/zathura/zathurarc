@@ -1,2 +1,3 @@
 set guioptions none
 set window-title-basename true
+set scroll-step 80
