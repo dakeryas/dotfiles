@@ -3,7 +3,7 @@
 configuration {
    modi: "window,drun,combi";
    combi-modi: "window,drun";
-   font: "hack 24";
+   font: "hack 11";
    icon-theme: "Papirus";
    show-icons: true;
 }
