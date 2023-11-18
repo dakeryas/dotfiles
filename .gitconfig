@@ -12,5 +12,5 @@
 	show = vim -R -
 	color = true
 [user]
-	email = valerian.sibille@planqc.eu
+	email = vsibille@mit.edu
 	name = Valérian Sibille
