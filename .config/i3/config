@@ -73,7 +73,7 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+Shift+d exec "fd . ~ | rofi -keep-right -sort -sorting-method fzf -matching regex -dmenu -i -multi-select | xargs -I {} xdg-open {}"
+bindsym $mod+Shift+d exec "fd . ~ | rofi -theme-str 'window {width: 65%;}' -keep-right -sort -sorting-method fzf -matching regex -dmenu -i -multi-select | xargs -I {} xdg-open {}"
 
 # start common programs
 bindsym $mod+n exec firefox
