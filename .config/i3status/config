@@ -14,7 +14,7 @@ general {
 order += "lm_sensors"
 order += "load"
 order += "memory"
-order += "volume master"
+order += "volume_status"
 order += "backlight"
 order += "keyboard_layout"
 order += "battery all"
@@ -27,6 +27,18 @@ lm_sensors {
     format_sensor = '[\?if=name=cpu CPU ]'
     format_sensor += '[\?if=name=edge GPU ]'
     format_sensor += '\?color=auto.input {input}°C'
+}
+
+volume_status {
+    format = '♪ {percentage}%'
+    format_muted = '♭ ({percentage}%)'
+    thresholds = [
+        (0, "hidden"),
+       (20, "good"),
+       (60, "degraded"),
+       (70, "#ffa500"),
+       (80, "bad"),
+    ]
 }
 
 volume master {
