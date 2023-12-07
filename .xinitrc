@@ -32,5 +32,5 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-[ -f $usermodmap ] && { sleep 20; xmodmap $usermodmap; } &
+[ -f $usermodmap ] && { sleep 15; xmodmap $usermodmap; } &
 XDG_SESSION_TYPE=x11 GDK_BACKEND=x11 QT_QPA_PLATFORMTHEME=qt6ct exec i3
