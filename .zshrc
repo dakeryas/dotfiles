@@ -123,3 +123,4 @@ export KEYTIMEOUT=20
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
