@@ -18,5 +18,5 @@ git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout master
 ```
 Clone the phoney submodules from the `.gitsubmodules` dependency files:
 ```
-gawk '/path/{p=$NF}/url/{u=$NF; cmd=sprintf("git clone %s %s", u, p); system(cmd)}' .gitmodules
+awk '/path/{p=$NF}/url/{u=$NF; cmd=sprintf("git clone %s %s", u, p); system(cmd)}' ~/.gitmodules
 ```
