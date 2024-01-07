@@ -43,7 +43,7 @@ exec_always --no-startup-id xset s 1800 1800 dpms 1800 1800 1800
 exec --no-startup-id nm-applet
 
 # Set background image
-exec --no-startup-id feh --no-fehbg --bg-fill "$HOME/Pictures/background.png"
+exec --no-startup-id feh --no-fehbg --bg-max "$HOME/Pictures/background.png"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -s USR1 py3status
