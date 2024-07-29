@@ -51,7 +51,7 @@ volume master {
 volume_status mic {
   format = ""
   format_muted = ""
-  color_muted = "yellow"
+  color_muted = "grey"
   is_input = "true"
 }
 
