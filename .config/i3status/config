@@ -14,7 +14,8 @@ general {
 order += "lm_sensors"
 order += "load"
 order += "memory"
-order += "volume_status"
+order += "volume_status out"
+order += "volume_status mic"
 order += "backlight"
 order += "keyboard_layout"
 order += "battery all"
@@ -29,7 +30,7 @@ lm_sensors {
     format_sensor += '\?color=auto.input {input}°C'
 }
 
-volume_status {
+volume_status out {
     format = '♪ {percentage}%'
     format_muted = '♭ ({percentage}%)'
     thresholds = [
@@ -45,6 +46,13 @@ volume master {
     format = "♪ %volume"
     format_muted = "♭ (%volume)"
     device = "pulse"
+}
+
+volume_status mic {
+  format = ""
+  format_muted = ""
+  color_muted = "yellow"
+  is_input = "true"
 }
 
 wireless _first_ {
