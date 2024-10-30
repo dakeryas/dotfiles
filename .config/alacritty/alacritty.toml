@@ -1,7 +1,8 @@
-import = ["/home/vsibille/.config/alacritty/themes/themes/hyper.toml"]
-
 [font]
 size = 7.0
 
 [font.normal]
 family = "Hack Nerd Font Mono"
+
+[general]
+import = ["/home/vsibille/.config/alacritty/themes/themes/hyper.toml"]
