@@ -1,4 +1,4 @@
-@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
+@theme "~/.local/share/rofi/themes/rounded-blue-dark.rasi"
 
 configuration {
    modi: "window,drun,ssh,combi";
@@ -6,8 +6,4 @@ configuration {
    font: "hack 11";
    icon-theme: "Papirus";
    show-icons: true;
-}
-
-element-icon {
-   size: 4ch ;
 }
