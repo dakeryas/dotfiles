@@ -1,8 +1,8 @@
 @theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
 
 configuration {
-   modi: "window,drun,combi";
-   combi-modi: "window,drun";
+   modi: "window,drun,ssh,combi";
+   combi-modi: "window,ssh,drun";
    font: "hack 11";
    icon-theme: "Papirus";
    show-icons: true;
