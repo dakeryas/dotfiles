@@ -83,6 +83,7 @@ bindsym $mod+Shift+d exec "fd . ~ | rofi -theme-str 'window {width: 65%;}' -keep
 # start common programs
 bindsym $mod+n exec firefox
 bindsym $mod+t exec telegram-desktop
+bindsym $mod+c exec ~/Software/bin/show_translated_clipboard
 
 # change focus
 bindsym $mod+h focus left; exec --no-startup-id ~/.config/i3/scripts/follow_focus.zsh
