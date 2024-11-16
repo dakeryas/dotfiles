@@ -19,6 +19,9 @@ font pango:Ubuntu Mono 10
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 10
 
+# Windows
+default_border pixel 1
+
 # Floating windows' settings
 floating_minimum_size 500 x 300
 floating_maximum_size 2000 x 1500
