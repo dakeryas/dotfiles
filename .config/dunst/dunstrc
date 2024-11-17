@@ -1,6 +1,7 @@
 [global]
 font = Hack Nerd Font 10
 transparency = 10
+offset = 20x50
 width = (0, 300)
 frame_width = 0
 padding = 6
