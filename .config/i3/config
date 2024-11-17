@@ -55,8 +55,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Use xbacklight to adjust brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 5; notify-send --hint=string:x-dunst-stack-tag:brightness 🔆 $(xbacklight -get)%"
-bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5; notify-send --hint=string:x-dunst-stack-tag:brightness 🔆 $(xbacklight -get)%"
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 5; bri=$(xbacklight -get); notify-send -t 500 -h string:x-dunst-stack-tag:brightness -h int:value:$bri 🔆 $bri%"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5; bri=$(xbacklight -get); notify-send -t 500 -h string:x-dunst-stack-tag:brightness -h int:value:$bri 🔆 $bri%"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
