@@ -31,6 +31,9 @@ for_window [class="(?i)firefox" instance="^(?!Navigator$)"] floating enable
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# Start compositor
+exec --no-startup-id picom -b
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
