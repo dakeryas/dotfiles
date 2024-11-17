@@ -43,7 +43,7 @@ exec_always --no-startup-id xset s 1800 1800 dpms 1800 1800 1800
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Set background image
 exec --no-startup-id feh --no-fehbg --bg-max "$HOME/Pictures/background.png"
