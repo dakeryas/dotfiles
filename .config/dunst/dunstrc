@@ -1,4 +1,5 @@
 [global]
+transparency = 10
 frame_width = 1
 width = (0, 300)
 
