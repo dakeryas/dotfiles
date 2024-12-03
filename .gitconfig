@@ -11,6 +11,8 @@
 [pager]
 	show = vim -R -
 	color = true
+[push]
+    autoSetupRemote = yes
 [user]
 	email = vsibille@mit.edu
 	name = Valérian Sibille
