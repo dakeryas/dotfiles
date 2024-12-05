@@ -9,7 +9,7 @@
 [init]
 	defaultBranch = master
 [pager]
-	show = vim -R -
+	show = vim -R -c ":AnsiEsc" -
 	color = true
 [push]
     autoSetupRemote = yes
