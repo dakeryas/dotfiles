@@ -1,0 +1,6 @@
+setxkbmap -layout fr,ru -option caps:ctrl_modifier,grp:alt_space_toggle
+[[ -f  ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+command -v xcape > /dev/null && xcape -e 'Caps_Lock=Escape' -t 300
+
+xinput set-prop 'ELAN0676:00 04F3:3195 Touchpad' "libinput Accel Speed" 0.9
+xinput set-prop 'ELAN0676:00 04F3:3195 Touchpad' "libinput Tapping Enabled" 1
