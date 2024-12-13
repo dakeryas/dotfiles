@@ -39,7 +39,7 @@ exec --no-startup-id picom -b
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 -nfk
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 -nf
 
 # Change default screen saving settings
 exec_always --no-startup-id xset s 1800 1800 dpms 1800 1800 1800
