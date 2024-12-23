@@ -2,7 +2,7 @@
 size = 7.0
 
 [font.normal]
-family = "Hack Nerd Font Mono"
+family = "Noto Sans Mono"
 
 [general]
 import = ["/home/vsibille/.config/alacritty/themes/themes/hyper.toml"]
