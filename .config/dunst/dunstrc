@@ -1,6 +1,6 @@
 [global]
 font = Hack Nerd Font 10
-transparency = 10
+transparency = 20
 origin = bottom-right
 offset = 20x65
 width = (0, 300)
