@@ -1,16 +1,13 @@
 #!/usr/bin/env zsh
 
-: ${ICON_PATH:="$HOME/.local/share/icons/brightness.svg"}
-: ${TIMEOUT:=500}
-: ${TAG:=Brightness}
-: ${READ_CMD:="xbacklight -get"}
-
-function main(){
-    local val=$(eval $READ_CMD);
-    local dunst_tag=string:x-dunst-stack-tag:$TAG  # shared location for given tag
-    args=(-t $TIMEOUT -h $dunst_tag -h int:value:$val $TAG "$val%")
-    [[ -f $ICON_PATH ]] && args+=(-i $ICON_PATH)
-    notify-send $args
+function read_rel_brightness(){
+    if (( ${+commands[xbacklight]} )); then
+        xbacklight -get
+    elif (( ${+commands[brightnessctl]} ));then
+        brightnessctl -m | cut -d, -f4 | tr -d '%'
+    fi
 }
 
-main $@
+ICON_PATH=~/.local/share/icons/brightness.svg \
+    TAG=Brightness \
+    ${0:A:h}/percentage_notify.zsh $(read_rel_brightness)
