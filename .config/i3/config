@@ -208,4 +208,4 @@ bindsym $mod+r mode "resize"
 bindsym Print exec --no-startup-id maim "$HOME/Pictures/screenshots/screen_$(date +'%Y-%m-%d_%H:%M:%S').png"
 bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/screenshots/screen_$(date +'%Y-%m-%d_%H:%M:%S').png"
 
-exec_always --no-startup-id zsh -c 'polybar-msg cmd quit; polybar &!'
+exec_always --no-startup-id zsh -c 'polybar-msg cmd quit; polybar -m | cut -d":" -f1 | parallel MONITOR={} polybar&!'
