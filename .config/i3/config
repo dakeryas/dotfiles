@@ -58,8 +58,8 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ t
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Use xbacklight to adjust brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 5; ~/.config/i3/scripts/brightness_notify.zsh"
-bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5; ~/.config/i3/scripts/brightness_notify.zsh"
+bindsym XF86MonBrightnessUp exec --no-startup-id "brightnessctl set 5%+; ~/.config/i3/scripts/brightness_notify.zsh"
+bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl set 5%-; ~/.config/i3/scripts/brightness_notify.zsh"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
