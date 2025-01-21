@@ -4,3 +4,14 @@ command -v xcape > /dev/null && xcape -e 'Caps_Lock=Escape' -t 300
 
 xinput set-prop 'ELAN0676:00 04F3:3195 Touchpad' "libinput Accel Speed" 0.9
 xinput set-prop 'ELAN0676:00 04F3:3195 Touchpad' "libinput Tapping Enabled" 1
+
+function setup_displays(){
+    local dp_status=$(xrandr | awk '/DP-3-2/{print $2}')
+    if [[ $dp_status == "connected" ]]; then
+        xrandr --output DP-3-2 --pos 0x0
+        xrandr --output DP-3-3 --pos 2560x0
+        xrandr --output eDP-1 --pos 1280x1440
+    fi
+}
+
+setup_displays
