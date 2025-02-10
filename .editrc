@@ -1,0 +1,4 @@
+bind -v
+bind "jk" vi-command-mode
+bind '^r' ed-search-prev-history
+lldb:bind "\t" lldb_complete
