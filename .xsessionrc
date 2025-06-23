@@ -13,7 +13,8 @@ function setup_displays(){
         xrandr --output $m --pos $positions[$n]
         (( ++n ))
     done
-    (( $#monitors > 0 )) && xrandr --output eDP-1 --pos 1280x1440
+    (( $#monitors )) && xrandr --output eDP-1 --pos 1280x1440 \
+        || xrandr -s 0
 }
 
 setup_displays
