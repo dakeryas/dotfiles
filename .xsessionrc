@@ -5,16 +5,22 @@ command -v xcape > /dev/null && xcape -e 'Caps_Lock=Escape' -t 300
 xinput set-prop 'ELAN0676:00 04F3:3195 Touchpad' "libinput Accel Speed" 0.9
 xinput set-prop 'ELAN0676:00 04F3:3195 Touchpad' "libinput Tapping Enabled" 1
 
-function setup_displays(){
-    local positions=(0x0  2560x0)
-    local monitors=($(xrandr | awk '/^DP-/&&$2=="connected"{print $1}'))
-    local n=1
+function turnoff_displays(){
+    local monitors=($(xrandr | awk '$2=="disconnected"{print $1}'))
     for m in $monitors; do
-        xrandr --output $m --pos $positions[$n]
-        (( ++n ))
+        xrandr --output $m --off
     done
-    (( $#monitors )) && xrandr --output eDP-1 --pos 1280x1440 \
-        || xrandr -s 0
 }
 
+function setup_displays(){
+    local positions=(0x0  2560x0 1280x1440)
+    typeset -A resolutions=($(xrandr | awk 'm{print m, $1; m=""}$2=="connected"{m=$1}'))
+    local n=1
+    for m in ${(k)resolutions}; do
+        xrandr --output $m --mode $resolutions[$m] --pos $positions[$n]
+        (( ++n ))
+    done
+}
+
+turnoff_displays
 setup_displays
