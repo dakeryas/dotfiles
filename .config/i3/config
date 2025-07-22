@@ -139,6 +139,9 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# assign workspaces to specific monitors
+workspace $ws4 output HDMI-1 DP-1 eDP-1
+
 # switch to workspace
 bindsym $mod+ampersand workspace number $ws1
 bindsym $mod+eacute workspace number $ws2
