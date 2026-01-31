@@ -88,7 +88,7 @@ bindsym $mod+Shift+d exec "fd . ~ | rofi -theme-str 'window {width: 65%;}' -keep
 
 # start common programs
 bindsym $mod+n exec firefox
-bindsym $mod+t exec telegram-desktop
+bindsym $mod+t exec Telegram
 bindsym $mod+c exec show_translated_clipboard
 
 # change focus
