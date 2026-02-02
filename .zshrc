@@ -72,6 +72,7 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
+    ssh-agent
     git
     vi-mode
     command-not-found
