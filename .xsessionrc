@@ -12,7 +12,7 @@ function turnoff_displays(){
 }
 
 function setup_displays(){
-    local positions=(0x0  2560x0 1600x1440)
+    local positions=(0x0  2560x0 1280x1440)
     typeset -A resolutions=($(xrandr | awk 'm{print m, $1; m=""}$2=="connected"{m=$1}'))
     local n=1
     for m in ${(k)resolutions}; do
