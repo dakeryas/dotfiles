@@ -1,4 +1,4 @@
-# vim: ft=zsh
+#!/bin/zsh
 [[ -f  ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 xinput set-prop 'SNSL002D:00 2C2F:002D Touchpad' "libinput Accel Speed" 0.9
