@@ -1,0 +1,124 @@
+#############################################################################
+# BASE PATHS
+#############################################################################
+
+method.insert = cfg.user,     private|const|string, (execute.capture, bash, -c, "logname | head -c -1")
+method.insert = cfg.meta,     private|const|string, (cat,"/home/",(cfg.user),"/.cache/rtorrent/")
+method.insert = cfg.data,     private|const|string, (cat,"/srv/data/rt/")
+method.insert = cfg.down,     private|const|string, (cat,(cfg.data),"down/")
+method.insert = cfg.watch,    private|const|string, (cat,(cfg.data),"watch/")
+method.insert = cfg.session,  private|const|string, (cat,(cfg.meta),"session/")
+method.insert = cfg.logs,     private|const|string, (cat,(cfg.meta),"log/")
+
+#############################################################################
+# SESSION
+#############################################################################
+
+directory.default.set = (cat,(cfg.down),"misc/")
+session.path.set = (cfg.session)
+
+#############################################################################
+# NETWORK 
+#############################################################################
+
+network.port_range.set = 51408-51408
+network.bind_address.set = 0.0.0.0
+
+dht.mode.set = disable
+protocol.pex.set = no
+protocol.encryption.set = allow_incoming,try_outgoing,enable_retry
+
+#############################################################################
+# RESOURCES
+#############################################################################
+
+throttle.max_uploads.set = 100
+throttle.max_uploads.global.set = 250
+
+pieces.memory.max.set = 2G
+
+#############################################################################
+# WATCHERS
+#############################################################################
+
+schedule2 = watch_films, 5, 5, \
+ ((load.start, (cat,(cfg.watch),"films/*.torrent"), \
+  "d.directory.set = (cat,(cfg.down),\"films/\")", \
+  "d.custom1.set=films"))
+
+schedule2 = watch_series, 5, 5, \
+ ((load.start, (cat,(cfg.watch),"series/*.torrent"), \
+  "d.directory.set = (cat,(cfg.down),\"series/\")", \
+  "d.custom1.set=series"))
+
+schedule2 = watch_music, 5, 5, \
+ ((load.start, (cat,(cfg.watch),"music/*.torrent"), \
+  "d.directory.set = (cat,(cfg.down),\"music/\")", \
+  "d.custom1.set=music"))
+
+schedule2 = watch_soft, 5, 5, \
+ ((load.start, (cat,(cfg.watch),"soft/*.torrent"), \
+  "d.directory.set = (cat,(cfg.down),\"soft/\")", \
+  "d.custom1.set=soft"))
+
+schedule2 = watch_misc, 5, 5, \
+ ((load.start, (cat,(cfg.watch),"misc/*.torrent"), \
+  "d.directory.set = (cat,(cfg.down),\"misc/\")", \
+  "d.custom1.set=misc"))
+
+
+#############################################################################
+# VIEWS
+#############################################################################
+
+view.add = view_films
+view.add = view_series
+view.add = view_music
+view.add = view_soft
+view.add = view_misc
+
+view.filter = view_films, ((equal, ((d.custom1)), ((cat,films)) ))
+view.filter = view_series, ((equal, ((d.custom1)), ((cat,series)) ))
+view.filter = view_music,  ((equal, ((d.custom1)), ((cat,music)) ))
+view.filter = view_soft,   ((equal, ((d.custom1)), ((cat,soft)) ))
+view.filter = view_misc,   ((equal, ((d.custom1)), ((cat,misc)) ))
+
+view.sort_current = view_series, ((less, ((d.name))))
+view.sort_current = view_music,  ((less, ((d.name))))
+view.sort_current = view_soft,   ((less, ((d.name))))
+view.sort_current = view_misc,   ((less, ((d.name))))
+view.sort_new = view_series, ((less, ((d.name))))
+view.sort_new = view_music,  ((less, ((d.name))))
+view.sort_new = view_soft,   ((less, ((d.name))))
+view.sort_new = view_misc,   ((less, ((d.name))))
+
+#############################################################################
+# GRAPHICAL INTERFACE
+#############################################################################
+
+ui.keymap.style.set = "vi"
+ui.torrent_list.layout.set = "compact"
+ui.color.title.set = 13
+ui.color.footer.set = 10
+ui.color.focus.set = reverse
+#ui.color.label.set = green
+#ui.color.info.set = green
+#ui.color.alarm.set = green
+ui.color.complete.set = blue
+ui.color.seeding.set = blue
+ui.color.stopped.set = yellow
+ui.color.queued.set = magenta
+ui.color.incomplete.set = red
+ui.color.leeching.set = green
+# ui.color.odd.set = dim
+#ui.color.even.set = white
+
+#############################################################################
+# LOGGING
+#############################################################################
+
+method.insert = cfg.logfile, private|const|string, \
+  (cat,(cfg.logs),"rtorrent-",(system.time),".log")
+
+log.open_file = logf, (cfg.logfile)
+log.add_output = "debug", logf
