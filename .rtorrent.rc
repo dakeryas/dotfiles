@@ -121,4 +121,4 @@ method.insert = cfg.logfile, private|const|string, \
   (cat,(cfg.logs),"rtorrent-",(system.time),".log")
 
 log.open_file = logf, (cfg.logfile)
-log.add_output = "debug", logf
+log.add_output = "info", logf
