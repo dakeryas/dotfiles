@@ -96,8 +96,8 @@ view.sort_new = view_misc,   ((less, ((d.name))))
 # GRAPHICAL INTERFACE
 #############################################################################
 
-ui.keymap.style.set = "vi"
-ui.torrent_list.layout.set = "compact"
+ui.keymap.style.set = vi
+ui.torrent_list.layout.set = compact
 ui.color.title.set = 13
 ui.color.footer.set = 10
 ui.color.focus.set = reverse
