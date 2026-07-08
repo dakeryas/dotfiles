@@ -35,33 +35,31 @@ protocol.encryption.set = allow_incoming,try_outgoing,enable_retry
 throttle.max_uploads.set = 100
 throttle.max_uploads.global.set = 250
 
-pieces.memory.max.set = 2G
-
 #############################################################################
 # WATCHERS
 #############################################################################
 
-schedule2 = watch_films, 5, 5, \
+schedule = watch_films, 5, 5, \
  ((load.start, (cat,(cfg.watch),"films/*.torrent"), \
   "d.directory.set = (cat,(cfg.down),\"films/\")", \
   "d.custom1.set=films"))
 
-schedule2 = watch_series, 5, 5, \
+schedule = watch_series, 5, 5, \
  ((load.start, (cat,(cfg.watch),"series/*.torrent"), \
   "d.directory.set = (cat,(cfg.down),\"series/\")", \
   "d.custom1.set=series"))
 
-schedule2 = watch_music, 5, 5, \
+schedule = watch_music, 5, 5, \
  ((load.start, (cat,(cfg.watch),"music/*.torrent"), \
   "d.directory.set = (cat,(cfg.down),\"music/\")", \
   "d.custom1.set=music"))
 
-schedule2 = watch_soft, 5, 5, \
+schedule = watch_soft, 5, 5, \
  ((load.start, (cat,(cfg.watch),"soft/*.torrent"), \
   "d.directory.set = (cat,(cfg.down),\"soft/\")", \
   "d.custom1.set=soft"))
 
-schedule2 = watch_misc, 5, 5, \
+schedule = watch_misc, 5, 5, \
  ((load.start, (cat,(cfg.watch),"misc/*.torrent"), \
   "d.directory.set = (cat,(cfg.down),\"misc/\")", \
   "d.custom1.set=misc"))
