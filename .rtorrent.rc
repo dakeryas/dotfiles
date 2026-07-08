@@ -81,11 +81,11 @@ view.filter = view_music,  ((equal, ((d.custom1)), ((cat,music)) ))
 view.filter = view_soft,   ((equal, ((d.custom1)), ((cat,soft)) ))
 view.filter = view_misc,   ((equal, ((d.custom1)), ((cat,misc)) ))
 
-view.sort_current = view_films, ((less, ((d.name))))
-view.sort_current = view_series, ((less, ((d.name))))
-view.sort_current = view_music,  ((less, ((d.name))))
-view.sort_current = view_soft,   ((less, ((d.name))))
-view.sort_current = view_misc,   ((less, ((d.name))))
+view.sort_current = view_films, ((less, d.name=))
+view.sort_current = view_series, ((less, d.name=))
+view.sort_current = view_music,  ((less, d.name=))
+view.sort_current = view_soft,   ((less, d.name=))
+view.sort_current = view_misc,   ((less, d.name=))
 
 schedule = sort_films, 2, 5, view.sort=view_films
 schedule = sort_series, 2, 5, view.sort=view_series
