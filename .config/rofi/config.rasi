@@ -3,7 +3,7 @@
 configuration {
    modi: "window,drun,ssh,combi";
    combi-modi: "window,ssh,drun";
-   font: "Noto Sans 11";
+   font: "hack 11";
    icon-theme: "Papirus";
    show-icons: true;
 }
