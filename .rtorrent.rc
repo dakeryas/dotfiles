@@ -21,12 +21,12 @@ session.path.set = (cfg.session)
 # NETWORK 
 #############################################################################
 
-network.port_range.set = 51408-51408
+network.listen.port.set = 51408
 network.bind_address.set = 0.0.0.0
 
 dht.mode.set = disable
 protocol.pex.set = no
-protocol.encryption.set = allow_incoming,try_outgoing,enable_retry
+protocol.encryption.set = prefer
 
 #############################################################################
 # RESOURCES
